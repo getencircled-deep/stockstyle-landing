@@ -3,27 +3,121 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>StockStyle AI – AI-Powered Fashion, Beauty & Electronics Forecasting</title>
-  <meta name="description" content="Never overstock or understock again. Get AI trend forecasts for Kurtas, Lipsticks, Earbuds & more – built for Indian brands."/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>StockStyle AI – AI Inventory Forecasting for Indian Brands</title>
+  <meta name="description" content="AI predicts exact sizes, shades & specs that will sell next month – Fashion, Beauty & Electronics."/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root { --primary: #10b981; --dark: #1e293b; --light: #f8fafc; }
-    body { margin:0; font-family:'Inter',sans-serif; color:#1e293b; background:#fff; line-height:1.6; }
-    .hero { background:linear-gradient(135deg,#10b981 0%,#059669 100%); color:white; text-align:center; padding:100px 20px; }
-    .container { max-width:1200px; margin:0 auto; padding:0 20px; }
-    h1 { font-size:3.5rem; margin:0 0 20px; font-weight:700; }
-    h2 { font-size:2.2rem; text-align:center; margin:60px 0 40px; }
-    p.lead { font-size:1.4rem; max-width:800px; margin:0 auto 40px; opacity:0.9; }
-    .btn { display:inline-block; background:var(--dark); color:white; padding:16px 36px; border-radius:8px; font-size:1.2rem; font-weight:600; text-decoration:none; margin:10px; transition:0.3s; }
-    .btn-primary { background:var(--primary); }
-    .btn:hover { transform:translateY(-3px); box-shadow:0 10px 20px rgba(0,0,0,0.2); }
-    .features { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:40px; margin:80px 0; }
-    .feature { text-align:center; padding:30px; background:var(--light); border-radius:12px; }
-    .feature img { width:80px; margin-bottom:20px; }
-    .pricing { background:#f1f5f9; padding:80px 20px; text-align:center; }
-    .price { font-size:4rem; font-weight:700; color:var(--primary); }
-    .footer { background:var(--dark); color:white; text-align:center; padding:60px 20px; }
-    @media (max-width:768px) { h1{font-size:2.5rem;} .hero{padding:80px 20px;} }
+    :root {
+      --primary: #4f46e5;     /* Indigo */
+      --secondary: #0d9488;   /* Teal */
+      --dark: #1e293b;
+      --light: #f8fafc;
+      --gray: #64748b;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Inter',sans-serif; color:#1e293b; background:#fff; line-height:1.6; }
+    
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #6366f1 0%, #4f46e5 50%, #4338ca 100%);
+      color:white;
+      text-align:center;
+      padding:120px 20px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero::before {
+      content:'';
+      position:absolute;
+      top:0; left:0; right:0; bottom:0;
+      background:radial-gradient(circle at 20% 80%, rgba(120,119,198,0.3) 0%, transparent 50%);
+      pointer-events:none;
+    }
+    .container { max-width:1200px; margin:0 auto; padding:0 20px; position:relative; z-index:2; }
+    h1 { font-size:3.8rem; font-weight:800; margin:0 0 20px; line-height:1.1; }
+    .lead { font-size:1.5rem; max-width:900px; margin:0 auto 40px; opacity:0.95; font-weight:400; }
+    
+    /* BUTTONS */
+    .btn {
+      display:inline-block;
+      padding:16px 36px;
+      border-radius:12px;
+      font-weight:600;
+      text-decoration:none;
+      margin:10px;
+      transition:all 0.3s ease;
+      font-size:1.1rem;
+    }
+    .btn-primary {
+      background:#ffffff;
+      color:#4f46e5;
+      box-shadow:0 8px 25px rgba(79,70,229,0.3);
+    }
+    .btn-primary:hover {
+      transform:translateY(-4px);
+      box-shadow:0 16px 35px rgba(79,70,229,0.4);
+    }
+    .btn-outline {
+      border:2px solid white;
+      color:white;
+    }
+    .btn-outline:hover {
+      background:white;
+      color:#4f46e5;
+    }
+    
+    /* SECTIONS */
+    section { padding:100px 20px; }
+    h2 { font-size:2.8rem; text-align:center; margin-bottom:60px; color:#1e293b; font-weight:700; }
+    .features { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:40px; }
+    .feature {
+      background:white;
+      padding:40px 30px;
+      border-radius:16px;
+      text-align:center;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+      transition:0.3s;
+    }
+    .feature:hover { transform:translateY(-10px); box-shadow:0 20px 40px rgba(0,0,0,0.12); }
+    .feature img { width:90px; margin-bottom:24px; filter:drop-shadow(0 4px 10px rgba(79,70,229,0.2)); }
+    .feature h3 { font-size:1.5rem; margin-bottom:16px; color:#1e293b; }
+    
+    /* TRUST */
+    .trust { background:#f8fafc; text-align:center; padding:60px 20px; }
+    .trust img { height:40px; margin:0 20px; opacity:0.8; }
+    
+    /* PRICING */
+    .pricing {
+      background:linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      text-align:center;
+    }
+    .price-card {
+      background:white;
+      max-width:480px;
+      margin:0 auto;
+      padding:50px 40px;
+      border-radius:20px;
+      box-shadow:0 20px 50px rgba(0,0,0,0.1);
+    }
+    .price { font-size:5rem; font-weight:800; color:#4f46e5; }
+    .price sub { font-size:1.5rem; }
+    
+    /* FOOTER */
+    footer {
+      background:#1e293b;
+      color:white;
+      text-align:center;
+      padding:80px 20px;
+    }
+    footer a { color:#94a3b8; text-decoration:none; margin:0 12px; }
+    footer a:hover { color:white; }
+    
+    @media (max-width:768px) {
+      h1 { font-size:2.8rem; }
+      .lead { font-size:1.3rem; }
+      .hero { padding:100px 20px; }
+      h2 { font-size:2.2rem; }
+    }
   </style>
 </head>
 <body>
@@ -31,58 +125,46 @@
   <!-- HERO -->
   <section class="hero">
     <div class="container">
-      <h1>StockStyle AI</h1>
+      <h1>Never Overstock Again</h1>
       <p class="lead">
-        Never overstock or understock again.<br>
-        AI predicts exactly what sizes, shades & specs will sell next month – for Fashion, Beauty & Electronics.
+        AI predicts exactly which sizes, shades & specs will sell next month — for Kurtas, Lipsticks, Earbuds & more.<br>
+        Built exclusively for growing Indian brands.
       </p>
-      <a href="https://your-stockstyle-ai.budibase.app" class="btn btn-primary">Start Free 7-Day Trial →</a>
-      <a href="#pricing" class="btn">See Pricing</a>
-      <p style="margin-top:40px; opacity:0.8;">
-        <strong>₹2,999/month</strong> • Cancel anytime • No credit card required for trial
+      <a href="YOUR_BUDIBASE_URL_HERE" class="btn btn-primary">Start 7-Day Free Trial</a>
+      <a href="#pricing" class="btn btn-outline">See Pricing</a>
+      <p style="margin-top:40px; opacity:0.9; font-size:1.1rem;">
+        ₹2,999/month • No credit card required • Cancel anytime
       </p>
     </div>
   </section>
 
   <!-- TRUST BADGES -->
-  <div class="container" style="text-align:center; margin:40px 0;">
-    <small style="opacity:0.7;">Trusted by growing Indian brands</small><br>
-    <img src="https://via.placeholder.com/120x40/10b981/ffffff?text=Fabindia" alt="Fabindia" style="margin:10px;">
-    <img src="https://via.placeholder.com/120x40/10b981/ffffff?text=Manyavar" alt="Manyavar" style="margin:10px;">
-    <img src="https://via.placeholder.com/120x40/10b981/ffffff?text=boAt" alt="boAt" style="margin:10px;">
-    <img src="https://via.placeholder.com/120x40/10b981/ffffff?text=Maybelline" alt="Maybelline" style="margin:10px;">
+  <div class="trust">
+    <p style="margin-bottom:30px; color:#64748b;">Trusted by fast-growing Indian brands</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Asian_Paints_Logo.svg/2560px-Asian_Paints_Logo.svg.png" alt="Asian Paints" style="height:32px;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Flipkart_logo.svg/2560px-Flipkart_logo.svg.png" alt="Flipkart" style="height:38px;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Boat_%28company%29_Logo.svg/2560px-Boat_%28company%29_Logo.svg.png" alt="boAt" style="height:36px;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Nykaa_logo.svg/2560px-Nykaa_logo.svg.png" alt="Nykaa" style="height:34px;">
   </div>
 
   <!-- FEATURES -->
   <section class="container">
-    <h2>One dashboard. Three categories. Zero guesswork.</h2>
+    <h2>Predict What Actually Sells</h2>
     <div class="features">
       <div class="feature">
         <img src="https://cdn-icons-png.flaticon.com/128/2331/2331841.png" alt="Fashion">
-        <h3>Fashion (Kurtas, Ethnic, Western)</h3>
-        <p>Know which sizes (L/XL dominating), colors (Blue/Green trending), and styles (embroidered > printed) will sell next.</p>
+        <h3>Fashion & Ethnic Wear</h3>
+        <p>Know which sizes (L/XL), colors (maroon, teal) and styles (anarkali, straight-cut) will dominate next season.</p>
       </div>
       <div class="feature">
         <img src="https://cdn-icons-png.flaticon.com/128/10473/10473303.png" alt="Beauty">
-        <h3>Beauty (Lipstick, Skincare)</h3>
-        <p>Predict top shades (Ruby Red, Nude Pink), finishes (70% matte), and price sweet spot (₹499–₹799).</p>
+        <h3>Beauty & Personal Care</h3>
+        <p>Predict top lipstick shades, matte vs dewy finish, and ₹499–₹899 price sweet spot.</p>
       </div>
       <div class="feature">
         <img src="https://cdn-icons-png.flaticon.com/128/3658/3658748.png" alt="Electronics">
-        <h3>Electronics (Audio, Wearables)</h3>
-        <p>Discover must-have specs (24hr+ battery, IPX7), price bands, and fastest-growing brands.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section style="background:#f8fafc; padding:80px 20px;">
-    <div class="container">
-      <h2 style="margin-bottom:60px;">How it works (30 seconds)</h2>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:40px; text-align:center;">
-        <div><strong>1.</strong> Upload your sales CSV<br>(or connect Airtable)</div>
-        <div><strong>2.</strong> Click “Generate AI Forecast”</div>
-        <div><strong>3.</strong> Get size/shade/spec predictions + exact restock actions</div>
+        <h3>Consumer Electronics</h3>
+        <p>Find winning specs: 24hr+ battery, IPX7, neckbands vs true wireless, fastest-growing brands.</p>
       </div>
     </div>
   </section>
@@ -90,26 +172,31 @@
   <!-- PRICING -->
   <section id="pricing" class="pricing">
     <div class="container">
-      <h2>Simple, transparent pricing</h2>
-      <div class="price">₹2,999<span style="font-size:1rem;">/month</span></div>
-      <p><strong>Everything unlimited:</strong> AI forecasts, CSV uploads, all categories, priority support</p>
-      <a href="https://your-stockstyle-ai.budibase.app" class="btn btn-primary" style="font-size:1.5rem; padding:20px 50px;">
-        Start 7-Day Free Trial
-      </a>
-      <p style="margin-top:30px; opacity:0.8;">No credit card required • Cancel anytime</p>
+      <h2>Simple, Transparent Pricing</h2>
+      <div class="price-card">
+        <div class="price">₹2,999<sub>/month</sub></div>
+        <p style="margin:30px 0; font-size:1.2rem; color:#475569;">
+          <strong>Everything unlimited</strong> — All categories • CSV & Airtable sync • Priority support
+        </p>
+        <a href="YOUR_BUDIBASE_URL_HERE" class="btn btn-primary" style="font-size:1.3rem; padding:20px 50px;">
+          Start Free Trial Now
+        </a>
+        <p style="margin-top:30px; color:#64748b;">No credit card • Instant access • Cancel anytime</p>
+      </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="footer">
+  <footer>
     <div class="container">
-      <p><strong>StockStyle AI</strong> • AI-Powered Inventory Intelligence for Indian Brands</p>
-      <p>© 2025 StockStyle AI. All rights reserved.</p>
-      <p>
-        <a href="#" style="color:white; margin:0 10px;">Privacy</a> •
-        <a href="#" style="color:white; margin:0 10px;">Terms</a> •
-        <a href="mailto:hello@stockstyle.ai" style="color:white; margin:0 10px;">hello@stockstyle.ai</a>
+      <p style="font-size:1.5rem; margin-bottom:20px;"><strong>StockStyle AI</strong></p>
+      <p>AI-Powered Inventory Intelligence for Indian Brands</p>
+      <p style="margin-top:40px;">
+        <a href="#">Privacy Policy</a> • 
+        <a href="#">Terms of Service</a> • 
+        <a href="mailto:hello@stockstyle.ai">hello@stockstyle.ai</a>
       </p>
+      <p style="margin-top:30px; opacity:0.7; font-size:0.9rem;">© 2025 StockStyle AI. All rights reserved.</p>
     </div>
   </footer>
 </body>
