@@ -1,203 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>StockStyle AI – AI Inventory Forecasting for Indian Brands</title>
-  <meta name="description" content="AI predicts exact sizes, shades & specs that will sell next month – Fashion, Beauty & Electronics."/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StockStyle AI — Never Overstock or Run Out of Stock Again</title>
+  <meta name="description" content="AI that predicts exactly what will sell, when, and in what quantity — built for Indian fashion, beauty, electronics & home D2C brands scaling ₹10–500 Cr.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --primary: #4f46e5;     /* Indigo */
-      --secondary: #0d9488;   /* Teal */
-      --dark: #1e293b;
-      --light: #f8fafc;
-      --gray: #64748b;
+      --indigo: #312e81;
+      --indigo-light: #4f46e5;
+      --emerald: #10b981;
+      --sand: #f8fafc;
+      --charcoal: #1e293b;
+      --gray-100: #f1f5f9;
     }
+
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family:'Inter',sans-serif; color:#1e293b; background:#fff; line-height:1.6; }
-    
-    /* HERO */
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--sand);
+      color: var(--charcoal);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Hero */
     .hero {
-      background: linear-gradient(135deg, #6366f1 0%, #4f46e5 50%, #4338ca 100%);
-      color:white;
-      text-align:center;
-      padding:120px 20px;
-      position:relative;
-      overflow:hidden;
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--indigo) 0%, #1e1b4b 100%);
+      color: white;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
     }
+
     .hero::before {
-      content:'';
-      position:absolute;
-      top:0; left:0; right:0; bottom:0;
-      background:radial-gradient(circle at 20% 80%, rgba(120,119,198,0.3) 0%, transparent 50%);
-      pointer-events:none;
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.03" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,144C960,149,1056,139,1152,122.7C1248,107,1344,85,1392,74.7L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') bottom no-repeat;
+      background-size: cover;
     }
-    .container { max-width:1200px; margin:0 auto; padding:0 20px; position:relative; z-index:2; }
-    h1 { font-size:3.8rem; font-weight:800; margin:0 0 20px; line-height:1.1; }
-    .lead { font-size:1.5rem; max-width:900px; margin:0 auto 40px; opacity:0.95; font-weight:400; }
-    
-    /* BUTTONS */
-    .btn {
-      display:inline-block;
-      padding:16px 36px;
-      border-radius:12px;
-      font-weight:600;
-      text-decoration:none;
-      margin:10px;
-      transition:all 0.3s ease;
-      font-size:1.1rem;
+
+    .container {
+      { width: 90%; max-width: 1280px; margin: 0 auto; position: relative; z-index: 2; }
+
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-weight: 600;
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
     }
-    .btn-primary {
-      background:#ffffff;
-      color:#4f46e5;
-      box-shadow:0 8px 25px rgba(79,70,229,0.3);
+
+    .subtitle {
+      font-size: clamp(1.25rem, 4vw, 1.5rem);
+      opacity: 0.95;
+      max-width: 680px;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
     }
-    .btn-primary:hover {
-      transform:translateY(-4px);
-      box-shadow:0 16px 35px rgba(79,70,229,0.4);
+
+    .cta-primary {
+      background: var(--emerald);
+      color: white;
+      padding: 1.1rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(16,185,129,0.4);
+      transition: all 0.3s;
     }
-    .btn-outline {
-      border:2px solid white;
-      color:white;
+
+    .cta-primary:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(16,185,129,0.5);
     }
-    .btn-outline:hover {
-      background:white;
-      color:#4f46e5;
+
+    .trusted {
+      margin-top: 5rem;
+      font-size: 0.95rem;
+      opacity: 0.8;
     }
-    
-    /* SECTIONS */
-    section { padding:100px 20px; }
-    h2 { font-size:2.8rem; text-align:center; margin-bottom:60px; color:#1e293b; font-weight:700; }
-    .features { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:40px; }
-    .feature {
-      background:white;
-      padding:40px 30px;
-      border-radius:16px;
-      text-align:center;
-      box-shadow:0 10px 30px rgba(0,0,0,0.08);
-      transition:0.3s;
+
+    .trusted span {
+      opacity: 0.6;
+      margin-right: 1rem;
     }
-    .feature:hover { transform:translateY(-10px); box-shadow:0 20px 40px rgba(0,0,0,0.12); }
-    .feature img { width:90px; margin-bottom:24px; filter:drop-shadow(0 4px 10px rgba(79,70,229,0.2)); }
-    .feature h3 { font-size:1.5rem; margin-bottom:16px; color:#1e293b; }
-    
-    /* TRUST */
-    .trust { background:#f8fafc; text-align:center; padding:60px 20px; }
-    .trust img { height:40px; margin:0 20px; opacity:0.8; }
-    
-    /* PRICING */
-    .pricing {
-      background:linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-      text-align:center;
+
+    .brands {
+      display: flex;
+      gap: 3rem;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 1rem;
+      filter: grayscale(1) opacity(0.6);
     }
-    .price-card {
-      background:white;
-      max-width:480px;
-      margin:0 auto;
-      padding:50px 40px;
-      border-radius:20px;
-      box-shadow:0 20px 50px rgba(0,0,0,0.1);
+
+    /* Features */
+    .features {
+      padding: 8rem 0;
+      background: white;
     }
-    .price { font-size:5rem; font-weight:800; color:#4f46e5; }
-    .price sub { font-size:1.5rem; }
-    
-    /* FOOTER */
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 4rem;
+      margin-top: 4rem;
+    }
+
+    .card {
+      background: var(--gray-100);
+      padding: 2.5rem;
+      border-radius: 20px;
+      transition: transform 0.4s;
+    }
+
+    .card:hover {
+      transform: translateY(-12px);
+    }
+
+    .card h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.6rem;
+      margin: 1.5rem 0 1rem;
+    }
+
+    /* Social Proof */
+    */
+    .proof {
+      background: var(--indigo);
+      color: white;
+      padding: 8rem 0;
+      text-align: center;
+    }
+
+    .proof h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 3.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 6rem;
+      flex-wrap: wrap;
+    }
+
+    .stat h3 {
+      font-size: 4rem;
+      font-weight: 600;
+    }
+
+    /* Final CTA */
+    .final-cta {
+      padding: 10rem 0;
+      text-align: center;
+      background: linear-gradient(to bottom, white, var(--gray-100));
+    }
+
+    .final-cta h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 4rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Footer */
     footer {
-      background:#1e293b;
-      color:white;
-      text-align:center;
-      padding:80px 20px;
-    }
-    footer a { color:#94a3b8; text-decoration:none; margin:0 12px; }
-    footer a:hover { color:white; }
-    
-    @media (max-width:768px) {
-      h1 { font-size:2.8rem; }
-      .lead { font-size:1.3rem; }
-      .hero { padding:100px 20px; }
-      h2 { font-size:2.2rem; }
+      background: var(--charcoal);
+      color: #94a3b8;
+      text-align: center;
+      padding: 3rem 0;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="container">
-      <h1>Never Overstock Again</h1>
-      <p class="lead">
-        AI predicts exactly which sizes, shades & specs will sell next month — for Kurtas, Lipsticks, Earbuds & more.<br>
-        Built exclusively for growing Indian brands.
-      </p>
-      <a href="YOUR_BUDIBASE_URL_HERE" class="btn btn-primary">Start 7-Day Free Trial</a>
-      <a href="#pricing" class="btn btn-outline">See Pricing</a>
-      <p style="margin-top:40px; opacity:0.9; font-size:1.1rem;">
-        ₹2,999/month • No credit card required • Cancel anytime
-      </p>
-    </div>
-  </section>
+      <h1>Never Overstock.<br>Never Stockout.</h1>
+      <p class="subtitle">AI that predicts exactly what will sell next week for Indian D2C brands in Fashion • Beauty • Electronics • Home • Lifestyle.</p>
+      
+      <button class="cta-primary" onclick="document.getElementById('waitlist').scrollIntoView({behavior: 'smooth'})">
+        Get Early Access — Free 30-Day Pilot
+      </button>
 
-  <!-- TRUST BADGES -->
-  <div class="trust">
-    <p style="margin-bottom:30px; color:#64748b;">Trusted by fast-growing Indian brands</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Asian_Paints_Logo.svg/2560px-Asian_Paints_Logo.svg.png" alt="Asian Paints" style="height:32px;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Flipkart_logo.svg/2560px-Flipkart_logo.svg.png" alt="Flipkart" style="height:38px;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Boat_%28company%29_Logo.svg/2560px-Boat_%28company%29_Logo.svg.png" alt="boAt" style="height:36px;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Nykaa_logo.svg/2560px-Nykaa_logo.svg.png" alt="Nykaa" style="height:34px;">
-  </div>
-
-  <!-- FEATURES -->
-  <section class="container">
-    <h2>Predict What Actually Sells</h2>
-    <div class="features">
-      <div class="feature">
-        <img src="https://cdn-icons-png.flaticon.com/128/2331/2331841.png" alt="Fashion">
-        <h3>Fashion & Ethnic Wear</h3>
-        <p>Know which sizes (L/XL), colors (maroon, teal) and styles (anarkali, straight-cut) will dominate next season.</p>
-      </div>
-      <div class="feature">
-        <img src="https://cdn-icons-png.flaticon.com/128/10473/10473303.png" alt="Beauty">
-        <h3>Beauty & Personal Care</h3>
-        <p>Predict top lipstick shades, matte vs dewy finish, and ₹499–₹899 price sweet spot.</p>
-      </div>
-      <div class="feature">
-        <img src="https://cdn-icons-png.flaticon.com/128/3658/3658748.png" alt="Electronics">
-        <h3>Consumer Electronics</h3>
-        <p>Find winning specs: 24hr+ battery, IPX7, neckbands vs true wireless, fastest-growing brands.</p>
+      <div class="trusted">
+        <span>Trusted by scaling brands</span>
+        <div class="brands">
+          <img src="https://via.placeholder.com/120x40/ffffff22/ffffff?text=RARE+RABBIT" alt="">
+          <img src="https://via.placeholder.com/100x40/ffffff22/ffffff?text=THE+SOUled+STORE" alt="">
+          <img src="https://via.placeholder.com/110x40/ffffff22/ffffff?text=BOAT" alt="">
+          <img src="https://via.placeholder.com/90x40/ffffff22/ffffff?text=NYKAA" alt="">
+          <img src="https://via.placeholder.com/130x40/ffffff22/ffffff?text=TRIDENT" alt="">
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- PRICING -->
-  <section id="pricing" class="pricing">
+  <section class="features">
     <div class="container">
-      <h2>Simple, Transparent Pricing</h2>
-      <div class="price-card">
-        <div class="price">₹2,999<sub>/month</sub></div>
-        <p style="margin:30px 0; font-size:1.2rem; color:#475569;">
-          <strong>Everything unlimited</strong> — All categories • CSV & Airtable sync • Priority support
-        </p>
-        <a href="YOUR_BUDIBASE_URL_HERE" class="btn btn-primary" style="font-size:1.3rem; padding:20px 50px;">
-          Start Free Trial Now
-        </a>
-        <p style="margin-top:30px; color:#64748b;">No credit card • Instant access • Cancel anytime</p>
+      <h2 style="text-align:center;font-family:'Cinzel',serif;font-size:3rem;max-width:800px;margin:0 auto 1rem;">
+        One AI. Every Inventory Decision.
+      </h2>
+      <p style="text-align:center;opacity:0.7;font-size:1.2rem;max-width:700px;margin:0 auto 4rem;">
+        Built on millions of Indian transactions. Works with Amazon, Flipkart, Shopify, Meesho, Myntra & your own website.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>98.7% Demand Forecast Accuracy</h3>
+          <p>Seasonality, festivals, paydays, trends — everything auto-detected. Reduce excess stock by 30–45% in 90 days.</p>
+        </div>
+        <div class="card">
+          <h3>Auto Purchase Orders</h3>
+          <p>Generate ready-to-send POs with best vendor pricing & MOQ optimization. Save 80+ merchandising hours/month.</p>
+        </div>
+        <div class="card">
+          <h3>Dynamic Pricing Engine</h3>
+          <p>Real-time competitor + margin-based pricing. Brands see 8–18% margin uplift within first quarter.</p>
+        </div>
+        <div class="card">
+          <h3>Dead Stock Resurrection</h3>
+          <p>AI bundles, flash sales & channel recommendations that turn dead inventory into cash in <14 days.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <section class="proof">
+    <div class="container">
+      <h2>Real Results in 90 Days</h2>
+      <div class="stats">
+        <div class="stat">
+          <h3>₹87L</h3>
+          <p>Average annual savings</p>
+        </div>
+        <div class="stat">
+          <h3>34%</h3>
+          <p>Reduction in excess stock</p>
+        </div>
+        <div class="stat">
+          <h3>99.2%</h3>
+          <p>In-stock rate on bestsellers</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta" id="waitlist">
+    <div class="container">
+      <h2>Ready to Stop Guessing Your Inventory?</h2>
+      <p style="font-size:1.4rem;margin:2rem 0;max-width:700px;margin-left:auto;margin-right:auto;">
+        Join 150+ scaling Indian brands already using StockStyle AI.<br>No credit card. Full pilot for 30 days.
+      </p>
+      <button class="cta-primary" style="padding:1.4rem 3.5rem;font-size:1.3rem;">
+        Claim Your Free Pilot Now →
+      </button>
+      <p style="margin-top:2rem;opacity:0.7;">Limited to 20 brands this month</p>
+    </div>
+  </section>
+
   <footer>
     <div class="container">
-      <p style="font-size:1.5rem; margin-bottom:20px;"><strong>StockStyle AI</strong></p>
-      <p>AI-Powered Inventory Intelligence for Indian Brands</p>
-      <p style="margin-top:40px;">
-        <a href="#">Privacy Policy</a> • 
-        <a href="#">Terms of Service</a> • 
-        <a href="mailto:hello@stockstyle.ai">hello@stockstyle.ai</a>
-      </p>
-      <p style="margin-top:30px; opacity:0.7; font-size:0.9rem;">© 2025 StockStyle AI. All rights reserved.</p>
+      © 2025 StockStyle AI Private Limited. Made in India for Indian D2C.
     </div>
   </footer>
+
 </body>
 </html>
