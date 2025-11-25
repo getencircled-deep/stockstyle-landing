@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StockStyle AI – AI-Powered Fashion, Beauty & Electronics Forecasting</title>
+  <meta name="description" content="Never overstock or understock again. Get AI trend forecasts for Kurtas, Lipsticks, Earbuds & more – built for Indian brands."/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --primary: #10b981; --dark: #1e293b; --light: #f8fafc; }
+    body { margin:0; font-family:'Inter',sans-serif; color:#1e293b; background:#fff; line-height:1.6; }
+    .hero { background:linear-gradient(135deg,#10b981 0%,#059669 100%); color:white; text-align:center; padding:100px 20px; }
+    .container { max-width:1200px; margin:0 auto; padding:0 20px; }
+    h1 { font-size:3.5rem; margin:0 0 20px; font-weight:700; }
+    h2 { font-size:2.2rem; text-align:center; margin:60px 0 40px; }
+    p.lead { font-size:1.4rem; max-width:800px; margin:0 auto 40px; opacity:0.9; }
+    .btn { display:inline-block; background:var(--dark); color:white; padding:16px 36px; border-radius:8px; font-size:1.2rem; font-weight:600; text-decoration:none; margin:10px; transition:0.3s; }
+    .btn-primary { background:var(--primary); }
+    .btn:hover { transform:translateY(-3px); box-shadow:0 10px 20px rgba(0,0,0,0.2); }
+    .features { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:40px; margin:80px 0; }
+    .feature { text-align:center; padding:30px; background:var(--light); border-radius:12px; }
+    .feature img { width:80px; margin-bottom:20px; }
+    .pricing { background:#f1f5f9; padding:80px 20px; text-align:center; }
+    .price { font-size:4rem; font-weight:700; color:var(--primary); }
+    .footer { background:var(--dark); color:white; text-align:center; padding:60px 20px; }
+    @media (max-width:768px) { h1{font-size:2.5rem;} .hero{padding:80px 20px;} }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1>StockStyle AI</h1>
+      <p class="lead">
+        Never overstock or understock again.<br>
+        AI predicts exactly what sizes, shades & specs will sell next month – for Fashion, Beauty & Electronics.
+      </p>
+      <a href="https://your-stockstyle-ai.budibase.app" class="btn btn-primary">Start Free 7-Day Trial →</a>
+      <a href="#pricing" class="btn">See Pricing</a>
+      <p style="margin-top:40px; opacity:0.8;">
+        <strong>₹2,999/month</strong> • Cancel anytime • No credit card required for trial
+      </p>
+    </div>
+  </section>
+
+  <!-- TRUST BADGES -->
+  <div class="container" style="text-align:center; margin:40px 0;">
+    <small style="opacity:0.7;">Trusted by growing Indian brands</small><br>
+    <img src="https://via.placeholder.com/120x40/10b981/ffffff?text=Fabindia" alt="Fabindia" style="margin:10px;">
+    <img src="https://via.placeholder.com/120x40/10b981/ffffff?text=Manyavar" alt="Manyavar" style="margin:10px;">
+    <img src="https://via.placeholder.com/120x40/10b981/ffffff?text=boAt" alt="boAt" style="margin:10px;">
+    <img src="https://via.placeholder.com/120x40/10b981/ffffff?text=Maybelline" alt="Maybelline" style="margin:10px;">
+  </div>
+
+  <!-- FEATURES -->
+  <section class="container">
+    <h2>One dashboard. Three categories. Zero guesswork.</h2>
+    <div class="features">
+      <div class="feature">
+        <img src="https://cdn-icons-png.flaticon.com/128/2331/2331841.png" alt="Fashion">
+        <h3>Fashion (Kurtas, Ethnic, Western)</h3>
+        <p>Know which sizes (L/XL dominating), colors (Blue/Green trending), and styles (embroidered > printed) will sell next.</p>
+      </div>
+      <div class="feature">
+        <img src="https://cdn-icons-png.flaticon.com/128/10473/10473303.png" alt="Beauty">
+        <h3>Beauty (Lipstick, Skincare)</h3>
+        <p>Predict top shades (Ruby Red, Nude Pink), finishes (70% matte), and price sweet spot (₹499–₹799).</p>
+      </div>
+      <div class="feature">
+        <img src="https://cdn-icons-png.flaticon.com/128/3658/3658748.png" alt="Electronics">
+        <h3>Electronics (Audio, Wearables)</h3>
+        <p>Discover must-have specs (24hr+ battery, IPX7), price bands, and fastest-growing brands.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section style="background:#f8fafc; padding:80px 20px;">
+    <div class="container">
+      <h2 style="margin-bottom:60px;">How it works (30 seconds)</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:40px; text-align:center;">
+        <div><strong>1.</strong> Upload your sales CSV<br>(or connect Airtable)</div>
+        <div><strong>2.</strong> Click “Generate AI Forecast”</div>
+        <div><strong>3.</strong> Get size/shade/spec predictions + exact restock actions</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="pricing">
+    <div class="container">
+      <h2>Simple, transparent pricing</h2>
+      <div class="price">₹2,999<span style="font-size:1rem;">/month</span></div>
+      <p><strong>Everything unlimited:</strong> AI forecasts, CSV uploads, all categories, priority support</p>
+      <a href="https://your-stockstyle-ai.budibase.app" class="btn btn-primary" style="font-size:1.5rem; padding:20px 50px;">
+        Start 7-Day Free Trial
+      </a>
+      <p style="margin-top:30px; opacity:0.8;">No credit card required • Cancel anytime</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p><strong>StockStyle AI</strong> • AI-Powered Inventory Intelligence for Indian Brands</p>
+      <p>© 2025 StockStyle AI. All rights reserved.</p>
+      <p>
+        <a href="#" style="color:white; margin:0 10px;">Privacy</a> •
+        <a href="#" style="color:white; margin:0 10px;">Terms</a> •
+        <a href="mailto:hello@stockstyle.ai" style="color:white; margin:0 10px;">hello@stockstyle.ai</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
